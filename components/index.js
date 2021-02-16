@@ -1,1 +1,1 @@
-export { Search } from "./Main";
+export { default as Main } from "./Main";

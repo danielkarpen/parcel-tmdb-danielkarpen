@@ -6,8 +6,23 @@ export default {
   show(id) {},
 
   index() {
-    fetch(`https://api.themoviedb.org/3/movie/550?api_key=${config.api.apiKey}`)
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    let movies = null;
+
+    return fetch(
+      `https://api.themoviedb.org/3/movie/550?api_key=${config.api.apiKey}`
+    )
+      .then((res) => {
+        if (res.status === 404) {
+          throw new Error("404!");
+        }
+        return res.json();
+      })
+      .then((jsonData) => {
+        movies = jsonData;
+        return movies;
+      });
+      .catch((err) => {
+        console.error(`Got an error:${err}`);
+      })
   },
 };

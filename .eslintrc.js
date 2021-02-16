@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     "array-callback-return": "warn",
     "arrow-body-style": 1,
+    "global-require": 1,
     "import/extensions": "off",
     "import/no-absolute-path": "off",
     "import/no-unresolved": "warn",

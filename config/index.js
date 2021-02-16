@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 
-const env = dotenv.config();
+dotenv.config();
 
 export default {
   api: {

@@ -4,7 +4,7 @@ export default {
   show(id) {},
 
   index(query = "/movie/popular") {
-    let movies = null;
+    const movies = null;
 
     return fetch(
       `https://api.themoviedb.org/3${query}?api_key=${config.api.apiKey}`
@@ -15,10 +15,7 @@ export default {
         }
         return res.json();
       })
-      .then((jsonData) => {
-        movies = jsonData;
-        return movies;
-      })
+      .then((jsonData) => jsonData)
       .catch((err) => {
         console.error(`❗ Got an error:${err}`);
         return err;

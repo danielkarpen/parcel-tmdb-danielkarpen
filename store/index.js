@@ -1,10 +1,9 @@
 export default {
-  movies: [],
+  movies: {},
   getMovies() {
     return this.movies;
   },
-  setMovies(newMovies) {
-    // 'concat' is 'non-mutating'
-    this.movies = this.movies.concat(newMovies);
+  setMovies(newMovieData) {
+    this.movies = { ...this.movies, ...newMovieData };
   },
 };

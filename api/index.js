@@ -3,11 +3,11 @@ import config from "~/config";
 export default {
   show(id) {},
 
-  index() {
+  index(query = "/movie/popular") {
     let movies = null;
 
     return fetch(
-      `https://api.themoviedb.org/3/movie/550?api_key=${config.api.apiKey}`
+      `https://api.themoviedb.org/3${query}?api_key=${config.api.apiKey}`
     )
       .then((res) => {
         if (res.status === 404) {

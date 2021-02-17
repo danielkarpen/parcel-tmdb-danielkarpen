@@ -4,8 +4,6 @@ export default {
   show(id) {},
 
   index(query = "/movie/popular") {
-    const movies = null;
-
     return fetch(
       `https://api.themoviedb.org/3${query}?api_key=${config.api.apiKey}`
     )

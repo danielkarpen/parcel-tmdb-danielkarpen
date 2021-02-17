@@ -1,5 +1,6 @@
 import api from "./api";
 import { Main } from "./components";
+import store from "./store";
 
 api.index();
 
@@ -14,4 +15,7 @@ function render() {
   });
 }
 
-render();
+api.index().then((movies) => {
+  store.setMovies(movies);
+  render();
+});

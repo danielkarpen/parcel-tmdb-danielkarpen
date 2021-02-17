@@ -1,7 +1,5 @@
 import config from "~/config";
 
-console.log(config);
-
 export default {
   show(id) {},
 
@@ -20,9 +18,10 @@ export default {
       .then((jsonData) => {
         movies = jsonData;
         return movies;
-      });
-      .catch((err) => {
-        console.error(`Got an error:${err}`);
       })
+      .catch((err) => {
+        console.error(`❗ Got an error:${err}`);
+        return err;
+      });
   },
 };
